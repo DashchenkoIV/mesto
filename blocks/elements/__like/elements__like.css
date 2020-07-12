@@ -1,0 +1,24 @@
+.elements__like {
+  height: 18.13px;
+  width: 20.76px;
+  background-image: url(../../../images/like.svg);
+  margin-top: 32px;
+  margin-bottom: 29.87px;
+  margin-right: 17.24px;
+}
+
+@media screen and (max-width: 1279px) {
+  .elements__like {
+    height: 32.13px;
+    width: 35.76px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .elements__like {
+    height: 18.13px;
+    width: 20.76px;
+  }
+}

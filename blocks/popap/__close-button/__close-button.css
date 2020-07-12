@@ -1,0 +1,20 @@
+.popap__close-button {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  height: 40.7px;
+  width: 40.7px;
+  background-color: transparent;
+  background-image: url(../../../images/cross.svg);
+  transform: background rotate(45deg);
+  background-size: initial;
+  background-position: center;
+  border: none;
+  transition: .3s;
+  outline: none;
+}
+
+.popap__close-button:hover {
+  background-image: url(../../../images/cross-hover.svg);
+  cursor: pointer;
+}

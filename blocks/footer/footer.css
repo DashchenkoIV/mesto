@@ -1,0 +1,15 @@
+@import url(./__text/footer__text.css);
+
+.footer {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 282px;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+}

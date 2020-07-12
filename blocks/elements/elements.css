@@ -1,0 +1,35 @@
+@import url(./__element/elements__element.css);
+@import url(./__info/elements__info.css);
+@import url(./__like/elements__like.css);
+@import url(./__photo/elements__photo.css);
+@import url(./__text/elements__text.css);
+
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 18px;
+  grid-row-gap: 21px;
+  margin-bottom: 66px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .elements {
+    grid-template-columns: repeat(3, 282px);
+  }
+
+}
+
+@media screen and (max-width: 1279px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .elements {
+    grid-template-columns: 282px;
+    margin-bottom: 48px;
+    grid-row-gap: 20px;
+  }
+}

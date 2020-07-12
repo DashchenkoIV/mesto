@@ -1,0 +1,11 @@
+.popap__line {
+  width: 358px;
+  height: 0;
+  opacity: 0.2;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 29.74px;
+}
+
+.popap__line:last-of-type {
+  margin-bottom: 48px;
+}
