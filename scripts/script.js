@@ -7,22 +7,24 @@ let activityProfile = document.querySelector('.profile__activity');
 let namePopap = document.querySelector('.popap__name');
 let activityPopap = document.querySelector('.popap__activity');
 
-openPopap.addEventListener('click', () => {
+function PopapOpen() {
   popap.classList.add('popap_opened');
-});
+}
 
-savePopap.addEventListener('click', () => {
-  let namePopap = document.querySelector('.popap__name');
-  let activityPopap = document.querySelector('.popap__activity');
+openPopap.addEventListener('click', PopapOpen);
+
+function PopapSave() {
   nameProfile.textContent = namePopap.value;
   activityProfile.textContent = activityPopap.value;
   popap.classList.remove('popap_opened');
-});
+}
 
-closePopap.addEventListener('click', () => {
-  let nameProfile = document.querySelector('.profile__name');
-  let activityProfile = document.querySelector('.profile__activity');
+savePopap.addEventListener('click', PopapSave);
+
+function PopapClose() {
   namePopap.value = nameProfile.textContent;
   activityPopap.value = activityProfile.textContent;
   popap.classList.remove('popap_opened');
-});
+}
+
+closePopap.addEventListener('click', PopapClose);

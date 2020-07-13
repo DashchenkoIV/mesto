@@ -5,6 +5,12 @@
   margin-top: 32px;
   margin-bottom: 29.87px;
   margin-right: 17.24px;
+  border: none;
+  background-color: transparent;
+}
+
+.elements__like:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1279px) {
