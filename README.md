@@ -6,7 +6,7 @@
 
 ## Ссылка на сайт:
 
-https://dashchenkoiv.github.io/russian-travel/
+https://dashchenkoiv.github.io/mesto/index.html
 
 ## Используемые технологии:
 
