@@ -9,21 +9,23 @@ let activityPopap = document.querySelector('.popap__activity');
 
 function PopapOpen() {
   popap.classList.add('popap_opened');
+  namePopap.value = nameProfile.textContent;
+  activityPopap.value = activityProfile.textContent;
 }
 
 openPopap.addEventListener('click', PopapOpen);
 
-function PopapSave() {
+function PopapSave(event) {
   nameProfile.textContent = namePopap.value;
   activityProfile.textContent = activityPopap.value;
   popap.classList.remove('popap_opened');
+
+  event.PreventDefault();
 }
 
 savePopap.addEventListener('click', PopapSave);
 
 function PopapClose() {
-  namePopap.value = nameProfile.textContent;
-  activityPopap.value = activityProfile.textContent;
   popap.classList.remove('popap_opened');
 }
 
