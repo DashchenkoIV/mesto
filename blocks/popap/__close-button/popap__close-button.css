@@ -18,3 +18,13 @@
   background-image: url(../../../images/cross-hover.svg);
   cursor: pointer;
 }
+
+@media screen and (max-width: 767px) {
+  .popap__close-button {
+    background-image: url(../../../images/Close-Icon-mobile.svg);
+    height: 30px;
+    width: 30px;
+    right: -30px;
+    top: -30px;
+  }
+}

@@ -9,3 +9,13 @@
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 767px) {
+  .popap__name {
+    width: 200px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    line-height: 15px;
+    font-size: 12px;
+  }
+}

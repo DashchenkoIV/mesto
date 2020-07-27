@@ -16,6 +16,7 @@
 @import url(../blocks/elements/__element/elements__element.css);
 @import url(../blocks/elements/__info/elements__info.css);
 @import url(../blocks/elements/__like/elements__like.css);
+@import url(../blocks/elements/__like/_active/elements__like_active.css);
 @import url(../blocks/elements/__photo/elements__photo.css);
 @import url(../blocks/elements/__text/elements__text.css);
 @import url(../blocks/footer/footer.css);
@@ -29,3 +30,10 @@
 @import url(../blocks/popap/__redaction/popap__redaction.css);
 @import url(../blocks/popap/__save-button/popap__save-button.css);
 @import url(../blocks/popap/_opened/popap_opened.css);
+@import url(../blocks/elements/__delete/elements__delete.css);
+@import url(../blocks/popap/_add/popap_add.css);
+@import url(../blocks/popap/_edit/popap_edit.css);
+@import url(../blocks/popap/_img/popap_img.css);
+@import url(../blocks/popap/__container-img/popap__container-img.css);
+@import url(../blocks/popap/__img/popap__img.css);
+@import url(../blocks/popap/__title/popap__title.css);

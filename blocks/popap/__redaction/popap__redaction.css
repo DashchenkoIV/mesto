@@ -5,3 +5,12 @@
   color: #000;
   margin: 34px 64px 54px 36px;
 }
+
+
+@media screen and (max-width: 767px) {
+  .popap__redaction {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 30px 35px 36px 20px;
+  }
+}
