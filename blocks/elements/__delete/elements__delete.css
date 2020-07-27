@@ -2,7 +2,7 @@
   background-image: url(../../../images/Group.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   width: 18px;
   height: 19.3px;
   border: none;

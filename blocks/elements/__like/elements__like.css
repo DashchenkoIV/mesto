@@ -2,9 +2,6 @@
   height: 18.13px;
   width: 20.76px;
   background-image: url(../../../images/like.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   margin-top: 32px;
   margin-bottom: 29.87px;
   margin-right: 17.24px;
@@ -22,7 +19,8 @@
     height: 32.13px;
     width: 35.76px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center;
+    background-size: contain;
   }
 }
 
