@@ -1,4 +1,4 @@
-.popap__close-button {
+.popup__close-button {
   position: absolute;
   right: -40px;
   top: -40px;
@@ -14,13 +14,13 @@
   outline: none;
 }
 
-.popap__close-button:hover {
+.popup__close-button:hover {
   background-image: url(../../../images/cross-hover.svg);
   cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
-  .popap__close-button {
+  .popup__close-button {
     background-image: url(../../../images/Close-Icon-mobile.svg);
     height: 30px;
     width: 30px;

@@ -1,65 +1,75 @@
-const popap_edit = document.querySelector('.popap_edit');
-const popap_add = document.querySelector('.popap_add');
-const popap_img = document.querySelector('.popap_img');
+const popupEditProfile = document.querySelector('.popup_edit');
+const popupAddProfile = document.querySelector('.popup_add');
+const popupImgProfile = document.querySelector('.popup_img');
 
-const openPopap_edit = document.querySelector('.profile__edit');
-const openPopap_add = document.querySelector('.profile__add');
+const openPopupEditProfile = document.querySelector('.profile__edit');
+const openPopupAddProfile = document.querySelector('.profile__add');
 
-const closePopap_edit = popap_edit.querySelector('.popap__close-button');
-const closePopap_add = popap_add.querySelector('.popap__close-button');
-const closePopap_img = popap_img.querySelector('.popap__close-button');
+const closePopupEditProfile = popupEditProfile.querySelector('.popup__close-button');
+const closePopupAddProfile = popupAddProfile.querySelector('.popup__close-button');
+const closePopupImgProfile = popupImgProfile.querySelector('.popup__close-button');
 
-const savePopap_edit = popap_edit.querySelector('.popap__save-button');
-const savePopap_add = popap_add.querySelector('.popap__save-button');
+const savePopupEditProfile = popupEditProfile.querySelector('.popup__save-button');
+const savePopupAddProfile = popupAddProfile.querySelector('.popup__save-button');
 
 let nameProfile = document.querySelector('.profile__name');
 let activityProfile = document.querySelector('.profile__activity');
 
-let namePopap_edit = popap_edit.querySelector('.popap__name_edit');
-let activityPopap_edit = popap_edit.querySelector('.popap__activity_edit');
-let namePopap_add = popap_add.querySelector('.popap__name_add');
-let activityPopap_add = popap_add.querySelector('.popap__activity_add');
+let namePopupEditProfile = popupEditProfile.querySelector('.popup__name_edit');
+let activityPopupEditProfile = popupEditProfile.querySelector('.popup__activity_edit');
+let namePopupAddProfile = popupAddProfile.querySelector('.popup__name_add');
+let activityPopupAddProfile = popupAddProfile.querySelector('.popup__activity_add');
 
-openPopap_edit.addEventListener('click', () => {
-  popap_edit.classList.add('popap_opened');
-  namePopap_edit.value = nameProfile.textContent;
-  activityPopap_edit.value = activityProfile.textContent;
+function openProfilePopup(popup) {
+  popup.classList.add('popup_opened');
+  namePopupEditProfile.value = nameProfile.textContent;
+  activityPopupEditProfile.value = activityProfile.textContent;
+  namePopupAddProfile.value = "";
+  activityPopupAddProfile.value = "";
+}
+
+openPopupEditProfile.addEventListener('click', () => {
+  openProfilePopup(popupEditProfile);
 });
 
-openPopap_add.addEventListener('click', () => {
-  popap_add.classList.add('popap_opened');
+openPopupAddProfile.addEventListener('click', () => {
+  openProfilePopup(popupAddProfile);
 });
 
-function PopapEditSave(event) {
-  nameProfile.textContent = namePopap_edit.value;
-  activityProfile.textContent = activityPopap_edit.value;
-  popap_edit.classList.remove('popap_opened');
+function saveEditProfilePopup(event) {
+  nameProfile.textContent = namePopupEditProfile.value;
+  activityProfile.textContent = activityPopupEditProfile.value;
+  popupEditProfile.classList.remove('popup_opened');
 
   event.preventDefault();
 }
 
-function PopapAddSave(event) {
-  renderCard({name: namePopap_add.value, link: activityPopap_add.value});
-  popap_add.classList.remove('popap_opened');
+savePopupEditProfile.addEventListener('click', saveEditProfilePopup);
+
+function saveAddProfilePopup(event) {
+  renderCard({name: namePopupAddProfile.value, link: activityPopupAddProfile.value});
+  popupAddProfile.classList.remove('popup_opened');
 
   event.preventDefault();
 }
 
-savePopap_edit.addEventListener('click', PopapEditSave);
-savePopap_add.addEventListener('click', PopapAddSave);
+savePopupAddProfile.addEventListener('click', saveAddProfilePopup);
 
-closePopap_edit.addEventListener('click', () => {
-  popap_edit.classList.remove('popap_opened');
+function closePopup(popapClosed) {
+  popapClosed.classList.remove('popup_opened');
+}
+
+closePopupEditProfile.addEventListener('click', () => {
+  closePopup(popupEditProfile);
 });
 
-closePopap_add.addEventListener('click', () => {
-  popap_add.classList.remove('popap_opened');
+closePopupAddProfile.addEventListener('click', () => {
+  closePopup(popupAddProfile);
 });
 
-closePopap_img.addEventListener('click', () => {
-  popap_img.classList.remove('popap_opened');
+closePopupImgProfile.addEventListener('click', () => {
+  closePopup(popupImgProfile);
 });
-
 
 const initialCards = [
   {
@@ -88,47 +98,47 @@ const initialCards = [
   }
 ];
 
-const TemplateCard = document.querySelector('.elements__template').content.querySelector('.elements__element');
-const ElementsCard = document.querySelector('.elements');
+const templateCard = document.querySelector('.elements__template').content.querySelector('.elements__element');
+const elementsCard = document.querySelector('.elements');
 
-let imagePopap = popap_img.querySelector('.popap__img');
-let titlePopap = popap_img.querySelector('.popap__title');
+let imagePopup = popupImgProfile.querySelector('.popup__img');
+let titlePopup = popupImgProfile.querySelector('.popup__title');
 
-function OpenImg(src, textcontent) {
-  popap_img.classList.add('popap_opened');
-  imagePopap.src = src;
-  titlePopap.textContent = textcontent;
-}
-
-function createCard(data) {
-  const ElementCard = TemplateCard.cloneNode(true);
-
-  const PhotoCard = ElementCard.querySelector('.elements__photo');
-  const DeleteButtonCard = ElementCard.querySelector('.elements__delete');
-  const InfoCard = ElementCard.querySelector('.elements__info');
-  const TextCard = InfoCard.querySelector('.elements__text');
-  const LikeButtonCard = InfoCard.querySelector('.elements__like');
-
-  PhotoCard.src = data.link;
-  TextCard.textContent = data.name;
-
-  LikeButtonCard.addEventListener('click', function (evt) {
-    evt.target.classList.toggle('elements__like_active');
-  });
-
-  DeleteButtonCard.addEventListener('click', function () {
-    ElementCard.remove();
-  });
-
-  PhotoCard.addEventListener("click", () => {
-    OpenImg(data.link, data.name);
-  });
-
-  return ElementCard;
+function openImg(src, textcontent) {
+  popupImgProfile.classList.add('popup_opened');
+  imagePopup.src = src;
+  titlePopup.textContent = textcontent;
 }
 
 function renderCard(data) {
-  ElementsCard.prepend(createCard(data));
+  elementsCard.prepend(createCard(data));
+}
+
+function createCard(data) {
+  const elementCard = templateCard.cloneNode(true);
+
+  const photoCard = elementCard.querySelector('.elements__photo');
+  const deleteButtonCard = elementCard.querySelector('.elements__delete');
+  const infoCard = elementCard.querySelector('.elements__info');
+  const textCard = infoCard.querySelector('.elements__text');
+  const likeButtonCard = infoCard.querySelector('.elements__like');
+
+  photoCard.src = data.link;
+  textCard.textContent = data.name;
+
+  likeButtonCard.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('elements__like_active');
+  });
+
+  deleteButtonCard.addEventListener('click', function () {
+    elementCard.remove();
+  });
+
+  photoCard.addEventListener("click", () => {
+    openImg(data.link, data.name);
+  });
+
+  return elementCard;
 }
 
 initialCards.forEach((data) => {
