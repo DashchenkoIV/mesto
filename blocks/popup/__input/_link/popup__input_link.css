@@ -3,7 +3,6 @@
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 13.24px;
-  margin-bottom: 48px;
   width: 358px;
   border: none;
   outline: none;
@@ -14,7 +13,6 @@
   .popup__input_link {
     width: 200px;
     padding-bottom: 12px;
-    margin-bottom: 36px;
     line-height: 15px;
     font-size: 12px;
   }
