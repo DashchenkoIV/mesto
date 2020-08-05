@@ -1,20 +1,20 @@
-.popup__name {
+.popup__input_link {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  border: none;
-  padding-bottom: 13.26px;
-  margin-bottom: 29.74px;
+  padding-bottom: 13.24px;
+  margin-bottom: 48px;
   width: 358px;
+  border: none;
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 767px) {
-  .popup__name {
+  .popup__input_link {
     width: 200px;
     padding-bottom: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     line-height: 15px;
     font-size: 12px;
   }

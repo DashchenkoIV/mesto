@@ -9,16 +9,16 @@ const closeEditPopupButton = popupEditProfile.querySelector('.popup__close-butto
 const closeAddCardButton = popupAddCard.querySelector('.popup__close-button');
 const closeImageButton = popupImage.querySelector('.popup__close-button');
 
-const saveEditPopupButton = popupEditProfile.querySelector('.popup__save-button');
-const saveAddCardButton = popupAddCard.querySelector('.popup__save-button');
+const saveEditPopupButton = popupEditProfile.querySelector('.popup__button_save');
+const saveAddCardButton = popupAddCard.querySelector('.popup__button_save');
 
 const userName = document.querySelector('.profile__name');
 const userActivity = document.querySelector('.profile__activity');
 
-const userNameInput = popupEditProfile.querySelector('.popup__name_edit');
-const userActivityInput = popupEditProfile.querySelector('.popup__activity');
-const addPlaceInput = popupAddCard.querySelector('.popup__name_add');
-const addLinkInput = popupAddCard.querySelector('.popup__link');
+const userNameInput = popupEditProfile.querySelector('.popup__input_edit');
+const userActivityInput = popupEditProfile.querySelector('.popup__input_activity');
+const addPlaceInput = popupAddCard.querySelector('.popup__input_add');
+const addLinkInput = popupAddCard.querySelector('.popup__input_link');
 
 const templateCard = document.querySelector('.elements__template').content.querySelector('.elements__element');
 const elementsCard = document.querySelector('.elements');
@@ -28,6 +28,14 @@ const titlePopup = popupImage.querySelector('.popup__title');
 
 function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
+}
+
+function closePopupByEsc(evt) {
+  if (evt.keyCode === 27) {
+    popupEditProfile.classList.remove('popup_opened');
+    popupAddCard.classList.remove('popup_opened');
+    popupImage.classList.remove('popup_opened');
+  }
 }
 
 popupEditProfileButton.addEventListener('click', () => {
@@ -105,6 +113,14 @@ closeAddCardButton.addEventListener('click', () => {
 closeImageButton.addEventListener('click', () => {
   togglePopup(popupImage);
 });
+
+document.addEventListener('keydown', closePopupByEsc);
+
+window.addEventListener('click', function(e) {
+  if (!e.target.closest('.popup__container')) {
+    togglePopup(e.target.closest('.popup'));
+  }
+})
 
 initialCards.forEach((data) => {
   renderCard(data);
