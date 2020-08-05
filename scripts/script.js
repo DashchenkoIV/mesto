@@ -116,14 +116,11 @@ closeImageButton.addEventListener('click', () => {
 
 document.addEventListener('keydown', closePopupByEsc);
 
-window.addEventListener('click', function(e) {
-  if (!e.target.closest('.popup__container')) {
+document.addEventListener('click', function(e) {
+  if ((!e.target.closest('.popup__container')) && (!e.target.closest('.popup__container-img'))) {
     togglePopup(e.target.closest('.popup'));
   };
-  if (!e.target.closest('.popup__container-img')) {
-    togglePopup(e.target.closest('.popup'));
-  }
-})
+});
 
 initialCards.forEach((data) => {
   renderCard(data);
