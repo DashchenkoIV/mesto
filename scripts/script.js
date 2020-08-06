@@ -116,9 +116,9 @@ closeImageButton.addEventListener('click', () => {
 
 document.addEventListener('keydown', closePopupByEsc);
 
-document.addEventListener('click', function(e) {
-  if ((!e.target.closest('.popup__container')) && (!e.target.closest('.popup__container-img'))) {
-    togglePopup(e.target.closest('.popup'));
+window.addEventListener('click', function(e) {
+  if (e.target.classList.contains('popup')) {
+    togglePopup(e.target);
   };
 });
 
